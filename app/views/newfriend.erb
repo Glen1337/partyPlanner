@@ -1,0 +1,17 @@
+
+<div>
+  <ul>
+  <%@errors.each do |error|%>
+    <li><%=error%></li>
+  <%end%>
+  </ul>
+</div>
+
+<h3>New Friend</h3>
+<form  action="/submitFriend" method="post">
+  <label for="firstname">First Name</label>
+  <input value= '<%=@firstName%>' placeholder="First Name" type="text" name="firstname"/><br />
+  <label for="lastname">Last Name</label>
+  <input value= '<%=@lastName%>' placeholder="Last Name" type="text" name="lastname"/><br />
+  <input type="submit" name="SubmitNewFriend" value="Submit" />
+</form>

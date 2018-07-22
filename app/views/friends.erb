@@ -1,0 +1,12 @@
+<div>
+  <ul>
+    <h3><%=@message%></h3>
+    <h4>Friends</h4>
+    <%@friends.each do |friend|%>
+      <li>&nbsp;&nbsp;<%=friend.first_name%> <%=friend.last_name%></li>
+    <%end%>
+  </ul>
+  <p>
+    <a href="/friends/new">New Friend</a>
+  </p>
+</div>

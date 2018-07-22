@@ -1,0 +1,26 @@
+<div>
+  <h3><%=@message%></h3>
+  <h4><%=@party.name%></h4>
+  <h6><%=@party.description%></h6>
+  <p>Location:&nbsp;&nbsp;<%=@party.location%></p>
+  <br />
+  <h5> Friends Attending </h5>
+  <ul>
+    <%@friends.each do |friend|%>
+      <li><%=friend.first_name%> <%=friend.last_name%></li>
+    <%end%>
+  </ul>
+</div>
+<br />
+<h5>Invite a friend to this party</h5>
+<form  action="/submitInvitation" method="post">
+  <input name="partyId" type="hidden" value="<%=@party.id%>"/>
+  <label>Friend
+    <select name="friendId">
+      <%@allFriends.each do |friend|%>
+        <option value="<%=friend.id%>"><%=friend.first_name%> <%=friend.last_name%></option>
+      <%end%>
+    </select>
+  </label>
+  <input type="submit" name="SubmitInvitation" value="Invite" />
+</form>

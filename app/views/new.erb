@@ -1,0 +1,27 @@
+<br />
+
+<div>
+  <ul>
+  <%@errors.each do |error|%>
+    <li><%=error%></li>
+  <%end%>
+  <!--  iterate over your errrors and make an li for each one -->
+  </ul>
+</div>
+
+
+<h3>New Party</h3>
+<form  action="/submit" method="post">
+
+  <label for="name">Name</label>
+  <input value= '<%=@name%>' placeholder="Name" type="text" name="name"/>
+  <br />
+  <label for="location">Location</label>
+  <input value= '<%=@loc%>' placeholder="Location" type="text" name="location"/>
+  <br />
+  <label for="description">Description</label>
+  <input value= "<%=@desc%>" placeholder="Description" type="text" name="description"/>
+  <br />
+
+  <input type="submit" name="SubmitNewParty" value="Submit" />
+</form>
